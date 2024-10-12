@@ -122,9 +122,9 @@ export default function Component() {
       } else if (isSignUpComplete) {
         router.push("/sign-in");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Sign up error:", error);
-      setError(error.message || "Sign up failed. Please try again.");
+      setError("Sign up failed. Please try again.");
     }
   };
 
@@ -140,9 +140,9 @@ export default function Component() {
       if (isSignUpComplete) {
         router.push(redirectUrl);
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Confirmation error:", error);
-      setError(error.message || "Confirmation failed. Please try again.");
+      setError("Confirmation failed. Please try again.");
     }
   };
 
@@ -152,9 +152,9 @@ export default function Component() {
     try {
       const { nextStep } = await handleSignIn(values.email, values.password);
       if (nextStep.signInStep === "DONE") router.push("/");
-    } catch (error: any) {
+    } catch (error) {
       console.error("Sign in error:", error);
-      setError(error.message || "Sign in failed. Please try again.");
+      setError("Sign in failed. Please try again.");
     }
   };
 
