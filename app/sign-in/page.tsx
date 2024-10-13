@@ -1,11 +1,11 @@
 import SignUp from "@/components/forms/SignUp";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = async () => {
   return (
-    <div>
+    <Suspense fallback={<div>...loading</div>}>
       <SignUp />
-    </div>
+    </Suspense>
   );
 };
 
